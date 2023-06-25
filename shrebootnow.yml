@@ -1,2 +1,7 @@
-- name: Execute the command in remote shell; stdout goes to the specified file on the remote
-  ansible.builtin.shell: somescript.sh >> somelog.txt
+---
+- hosts: all
+ 
+  become: true
+  tasks:
+    - name: Execute the command in remote shell; stdout goes to the specified file on the remote
+      ansible.builtin.shell: /temp/reboot.sh
