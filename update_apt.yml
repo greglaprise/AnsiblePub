@@ -1,15 +1,9 @@
 ---
-- name: Update APT
-  hosts: your_servers
-  become: yes
-
+- hosts: all
+ 
+  become: true
   tasks:
-    - name: Update APT cache
+    - name: update apt packages
       apt:
+        upgrade: yes
         update_cache: yes
-
-    - name: Upgrade packages
-      apt:
-        upgrade: dist
-        autoremove: yes
-        autoclean: yes
