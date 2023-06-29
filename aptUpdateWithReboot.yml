@@ -1,0 +1,13 @@
+---
+- hosts: all
+ 
+  become: true
+  tasks:
+    - name: update apt packages
+      apt:
+        upgrade: dist
+        update_cache: yes
+        autoremove: yes
+        autoclean: yes
+    - name: Reboot the machine with all defaults options
+      reboot:
